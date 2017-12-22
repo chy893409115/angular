@@ -1,0 +1,179 @@
+<storeHeader></storeHeader>
+
+<!--轮播图-->
+<carousel [interval]="NextPhotoInterval" [noWrap]="noLoopSlides">
+  <slide *ngFor="let slidez of slides; let index=index" [active]="slidez.active">
+    <img [src]="slidez.image" style="margin:auto;">
+
+    <div class="carousel-caption">
+      <!--<h3 style="background-color: transparent;color: white;">Slide {{index + 1}}</h3>-->
+      <p style="background-color: transparent;color: white;">{{slidez.text}}</p>
+    </div>
+  </slide>
+</carousel>
+<!--一楼首页推荐-->
+<div class="floor" id="f1">
+  <div class="floor_top">
+    <img src="img/index/computer_icon.png" alt="" /> 首页推荐 /1F
+  </div>
+  <!--格式化  shift+alt+f-->
+  <div class="floor_content" *ngIf="recommendedItems.length>0">
+    <img *ngIf="recommendedItems.length==0" src="img/loading.gif" class="loading" alt="">
+    <div>
+      <div class="desc">
+        <p class="name">{{recommendedItems[0].title}}</p>
+        <p class="details">{{recommendedItems[0].details}}</p>
+        <p class="price">￥{{recommendedItems[0].price}}</p>
+        <a routerLink="/detail" class="view">查看详情</a>
+      </div>
+      <img [src]="recommendedItems[0].pic">
+    </div>
+    <div>
+      <img [src]="recommendedItems[1].pic">
+      <div class="desc">
+        <p class="name">{{recommendedItems[1].title}}</p>
+        <p class="details">{{recommendedItems[1].details}}</p>
+        <p class="price">￥{{recommendedItems[1].price}}</p>
+        <a routerLink="/detail" class="view">查看详情</a>
+      </div>
+    </div>
+    <div>
+      <div class="desc">
+        <p class="name">{{recommendedItems[2].title}}</p>
+        <p class="price">{{recommendedItems[2].price}}</p>
+        <a routerLink="/detail" class="view">查看详情</a>
+      </div>
+      <img [src]="recommendedItems[2].pic">
+    </div>
+    <div class="product ">
+      <img [src]="recommendedItems[3].pic" alt="" />
+      <h2>{{recommendedItems[3].title}}</h2>
+      <p>￥{{recommendedItems[3].price}}</p>
+      <a routerLink="/detail">查看详情</a>
+    </div>
+    <div class="product ">
+      <img [src]="recommendedItems[4].pic" alt="" />
+      <h2>{{recommendedItems[4].title}}</h2>
+      <p>￥{{recommendedItems[4].price}}</p>
+      <a routerLink="/detail">查看详情</a>
+    </div>
+    <div class="product ">
+      <img [src]="recommendedItems[5].pic" alt="" />
+      <h2>{{recommendedItems[5].title}}</h2>
+      <p>￥{{recommendedItems[5].price}}</p>
+      <a routerLink="/detail">查看详情</a>
+    </div>
+  </div>
+</div>
+<!--楼梯2f-->
+<div class="floor" id="f2">
+  <div class="floor_top">
+    <img src="img/index/computer_icon.png" alt="" /> 最新上架 /2F
+  </div>
+  <div class="floor_content" *ngIf="newArrivalItems.length>0">
+    <img *ngIf="recommendedItems.length==0" src="img/loading.gif" class="loading">
+    <div>
+      <div class="desc">
+        <p class="name">{{newArrivalItems[0].title}}</p>
+        <p class="details">{{newArrivalItems[0].details}}</p>
+        <p class="price">￥{{newArrivalItems[0].price}}</p>
+        <a routerLink="/detail" class="view">查看详情</a>
+      </div>
+      <img [src]="newArrivalItems[0].pic">
+    </div>
+    <div>
+      <img [src]="newArrivalItems[1].pic">
+      <div class="desc">
+        <p class="name">{{newArrivalItems[1].title}}</p>
+        <p class="details">{{newArrivalItems[1].details}}</p>
+        <p class="price">￥{{newArrivalItems[1].price}}</p>
+        <a routerLink="/detail" class="view">查看详情</a>
+      </div>
+    </div>
+    <div>
+      <div class="desc">
+        <p class="name">{{newArrivalItems[2].title}}</p>
+        <p class="price">￥{{newArrivalItems[2].price}}</p>
+        <a routerLink="/detail" class="view">查看详情</a>
+      </div>
+      <img [src]="newArrivalItems[2].pic">
+    </div>
+    <div class="product ">
+      <img [src]="newArrivalItems[3].pic" alt="" />
+      <h2>{{newArrivalItems[3].title}}</h2>
+      <p>￥{{newArrivalItems[3].price}}</p>
+      <a routerLink="/detail">查看详情</a>
+    </div>
+    <div class="product ">
+      <img [src]="newArrivalItems[4].pic" alt="" />
+      <h2>{{newArrivalItems[4].title}}</h2>
+      <p>￥{{newArrivalItems[4].price}}</p>
+      <a routerLink="/detail">查看详情</a>
+    </div>
+    <div class="product ">
+      <img [src]="newArrivalItems[5].pic" alt="" />
+      <h2>{{newArrivalItems[5].title}}</h2>
+      <p>￥{{newArrivalItems[5].price}}</p>
+      <a routerLink="/detail">查看详情</a>
+    </div>
+    
+  </div>
+</div>
+
+<!--加载三楼-->
+
+
+<div class="floor" id="f3">
+  <div class="floor_top">
+    <img src="img/index/computer_icon.png" alt="" /> 热销单品 /3F
+  </div>
+  <div class="floor_content" *ngIf="topSaleItems.length>0">
+    <img *ngIf="topSaleItems.length==0" src="img/loading.gif" class="loading">
+    <div>
+      <div class="desc">
+        <p class="name">{{topSaleItems[0].title}}</p>
+        <p class="details">{{topSaleItems[0].details}}</p>
+        <p class="price">￥{{topSaleItems[0].price}}</p>
+        <a routerLink="/detail" class="view">查看详情</a>
+      </div>
+      <img [src]="topSaleItems[0].pic">
+    </div>
+    <div>
+      <img [src]="topSaleItems[1].pic">
+      <div class="desc">
+        <p class="name">{{topSaleItems[1].title}}</p>
+        <p class="details">{{topSaleItems[1].details}}</p>
+        <p class="price">￥{{topSaleItems[1].price}}</p>
+        <a routerLink="/detail" class="view">查看详情</a>
+      </div>
+    </div>
+    <div>
+      <div class="desc">
+        <p class="name">{{topSaleItems[2].title}}</p>
+        <p class="price">￥{{topSaleItems[2].price}}</p>
+        <a routerLink="/detail" class="view">查看详情</a>
+      </div>
+      <img [src]="topSaleItems[2].pic">
+    </div>
+    <div class="product ">
+      <img [src]="topSaleItems[3].pic" alt="" />
+      <h2>{{topSaleItems[3].title}}</h2>
+      <p>￥{{topSaleItems[3].price}}</p>
+      <a routerLink="/detail">查看详情</a>
+    </div>
+    <div class="product ">
+      <img [src]="topSaleItems[4].pic" alt="" />
+      <h2>{{topSaleItems[4].title}}</h2>
+      <p>￥{{topSaleItems[4].price}}</p>
+      <a routerLink="/detail">查看详情</a>
+    </div>
+    <div class="product ">
+      <img [src]="topSaleItems[5].pic" alt="" />
+      <h2>{{topSaleItems[5].title}}</h2>
+      <p>￥{{topSaleItems[5].price}}</p>
+      <a routerLink="/detail">查看详情</a>
+    </div>
+    
+  </div>
+</div>
+<storeFooter></storeFooter>
